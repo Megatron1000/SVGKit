@@ -35,7 +35,9 @@
  
  */
 
+#if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
+#endif
 
 #import "SVGKParser.h" // needed for asynchronous loading method-signature
 
@@ -62,7 +64,11 @@ typedef void (^SVGKImageAsynchronousLoadingDelegate)(SVGKImage* loadedImage, SVG
  
  NB you can get MUCH BETTER performance using the methods such as exportUIImageAntiAliased and exportNSDataAntiAliased
  */
+#if TARGET_OS_IPHONE
 @property (weak, nonatomic, readonly) UIImage* UIImage;
+#else
+@property (weak, nonatomic, readonly) NSImage* NSImage;
+#endif
 
 @property (nonatomic, strong, readonly) SVGKSource* source;
 @property (nonatomic, strong, readonly) SVGKParseResult* parseErrorsAndWarnings;

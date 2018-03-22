@@ -32,7 +32,7 @@
 	return [[Text alloc] initWithValue:data];
 }
 
--(Comment*) createComment:(NSString*) data
+-(SVGComment*) createComment:(NSString*) data
 {
 	return [[Comment alloc] initWithValue:data];
 }
